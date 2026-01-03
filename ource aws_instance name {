@@ -1,0 +1,17 @@
+[33mcommit dca121f192c6cbaa4128b80770886e41682c8bec[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ajay <ap1892503@gmail.com>
+Date:   Wed Dec 31 17:36:02 2025 +0530
+
+    Day-2
+
+[33mcommit f74fa48ad3d40fff02f640fb515b0d552fc864d2[m
+Author: Ajay <ap1892503@gmail.com>
+Date:   Tue Dec 30 13:13:39 2025 +0530
+
+    add Day-0 folder
+
+[33mcommit 758a718f213fb249feace916ff75cdc4333a50b2[m
+Author: Ajay <ap1892503@gmail.com>
+Date:   Tue Dec 30 13:09:23 2025 +0530
+
+    terraform initial clean commit
