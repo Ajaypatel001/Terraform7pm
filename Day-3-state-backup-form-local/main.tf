@@ -3,7 +3,7 @@ resource "aws_instance" "name" {
   instance_type = "t2.medium"
 
   tags = {
-    Name = "qa"
+    Name = "test"
   }
 }
 
@@ -11,9 +11,4 @@ resource "aws_s3_bucket" "dev" {
   bucket = "dev-qa-bucket-12345"
 }
 
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  bucket = aws_s3_bucket.dev.id
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
+
