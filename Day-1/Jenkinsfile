@@ -1,17 +1,39 @@
-node {
-    
-    stage('git chaeckout') {
-         git branch: 'main', url: 'https://github.com/bhawnavishwakarma007/Terraform_Practice.git'
+pipeline {
+    agent any
+
+    parameters {
+        choice(
+            name: 'ACTION',
+            choices: ['apply', 'destroy'],
+            description: 'Select Terraform action'
+        )
     }
-    stage('terraform init') {
-        dir('Day-1'){
+    stages {
+        stage('git clone') {
+            steps {
+               git branch: 'main', url: 'https://github.com/bhawnavishwakarma007/Terraform_Practice.git'
+            }
+        }
+        stage('terraform init') {
+            steps {
+                dir('Day-1') {
             sh 'terraform init'
-        }
-        
+          }
+       }
     }
-    stage('terraform plan') {
-        dir('Day-1'){
-            sh 'terraform plan'
+        stage('terraform plan') {
+            steps {
+                 dir('Day-1') {
+               sh 'terraform plan'
+            }
         }
     }
-}
+        stage('terraform apply') {
+            steps {
+                 dir('Day-1') {
+               sh 'terraform ${ACTION} -auto-approve'
+            }
+          }
+        }
+     }
+   }
